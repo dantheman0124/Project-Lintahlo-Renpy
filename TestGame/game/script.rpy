@@ -3,6 +3,8 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
+$ playerName = "Daniel"
+
 #characters
 define MC = Character("You")
 define Hana = Character("Hana")
@@ -27,6 +29,7 @@ image kaz smug = "kaz_smug"
 
 
 label start:
+    
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
@@ -42,7 +45,7 @@ label start:
     "*WHAMMMMM!*"
     
     
-    scene bedroom_day
+    scene bedroom_day with fade
     
     MC "Oww-! Okay, I'm up! I'm up!"
     "{i}I fumble and squirm to get my sister off of me - it’s no use. I turn my head, looking up at my sister as she towers over me.{i}"
@@ -57,7 +60,7 @@ label start:
     "{i}Hana releases her foot from my body and leaves the room whistling an annoying tune, allowing me to get a hold of my surroundings. I stretch my arms out and head downstairs.{i}"
     
     
-    scene livingroom_day
+    scene livingroom_day with fade
     "{i}I go into the kitchen and see that Hana has made some eggs, bacon, and rice for breakfast. Guess she wanted to eat with me, she should have just said so.{i}"
     "{i}We start eating our cold breakfast with nothing to say in particular to each other. Any reason for resentment has long since dissipated, as it always goes.{i}"
     "*Cellphone ringing*"
@@ -67,6 +70,7 @@ label start:
     show hana cute at right:
         xalign 0.5
         yalign 1.0
+    with fade
     "{i}I look over and notice Hana shyly looking up at me - waiting for me to say something.{i}"
     
     menu:
@@ -74,7 +78,7 @@ label start:
             MC "Hm? Do you need something?"
             show hana mad at right:
                 xalign 0.5
-                yalign 1.0
+                yalign 1.0            
             Hana "You could say thank you every once in a while ya know..."
             
             
@@ -108,12 +112,12 @@ label start:
     "{i}I finish my meal and do the same, heading upstairs to get dressed before brushing my teeth.{i}"
 
     
-    scene black_screen
+    scene black_screen with fade
     "{i}I strip down from my pajamas and grab my black Moe Boxer underwear from the top drawer of my dresser.{i}"
     "{i}I grab the nearest of all the clothes I need and throw them on. While I’m in the bathroom, simultaneously washing my face and brushing my teeth, Hana yells that she’s heading out, which means my time is running out.{i}"
     "{i}I quickly get my things together, grab my bag, and head out the door shortly after Hana leaves, making sure to lock the door behind me.{i}"
     
-    scene road_morning
+    scene road_morning with fade
     MC "*sigh* The start to another boring school year. I wonder if my friends have changed at all since last year..."
     "{size=-4}*tip tap tip tap*{/size}"
     "*tip tap tip tap*"
@@ -154,8 +158,55 @@ label start:
         yalign 1.0
     Kaz "Typical of you. Let’s hurry, we shouldn’t be late on the first day of class."
     hide kaz happy
-    "{i}We walk at a quicker pace to make up for lost time during our conversation. Within a few minutes we finally reach the front of the school.{i}"
-
+    "{i}We walk at a quicker pace to make up for lost time during our conversation. Within a few minutes we finally reach the school.{i}"
+    
+    
+    
+    scene black_screen with fade
+    "{i}The beginning of the school day went as normal. Kaz ended up being in my first period math class, so I just had to sit through my second class until lunch. Kaz met me in the hallway after second period ended.{i}"
+    
+    
+    scene schoolhall_day with fade
+    show kaz happy:
+        xalign 0.5
+        yalign 1.0
+    Kaz "Hey dude! It's finally lunchtime!"
+    show kaz upset:
+        xalign 0.5
+        yalign 1.0
+    Kaz "I can't believe how tired I am of classes already... It's only been like three hours!"
+    MC "Yeah I know... I almost fell asleep in second period. I guess I shouldn't have slept in so late, now I'm all sluggish and tired."
+    show kaz smug:
+        xalign 0.5
+        yalign 1.0
+    Kaz "You should really fix your sleep schedule man!"
+    "{i}I can't believe how hypocritial he's being right now. He woke up late too... why is he lecturing me?{i}"
+    show kaz happy:
+        xalign 0.5
+        yalign 1.0
+    Kaz "Well let's not waste more of our lunch. Do you wanna go to the usual spot for lunch? I bet {b}she's{\b} already waiting there."
+    MC "Yeah let's go then. No need to keep her waiting."
+    
+    
+    scene black_screen with fade
+    "{i}Kaz and I head up a few flights of stairs until we reach our usual lunch spot; the school rooftop.{i}"
+    
+    
+    scene schoolroof_day with fade
+    show kaz happy:
+        xalign 0.5
+        yalign 1.0
+    Kaz "MAN what a nice day to be up here!"
+    MC "Yeah the weather is pefect today. It's sunny, there's a slight breeze, it's not too hot... Almost like it's straight out of an anime or something."
+    show kaz neutral:
+        xalign 0.5
+        yalign 1.0
+    "{i}Kaz briefly looks around, admiring the beautiful view of the school rooftop. It's not often that the weather is like this during this time of year.{i}"
+    show kaz surprised with hpunch:
+        xalign 0.5
+        yalign 1.0
+    Kaz "Hey look! It's Kasumi!"
+    "{i}I look over by the benches and see my childhood friend, Kasumi, sitting and waiting with her lunch. She notices us and comes over.{i}"
     
     # This ends the game.
     return
