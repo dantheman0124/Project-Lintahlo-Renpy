@@ -23,50 +23,57 @@ image kaz neutral = "kaz_neutral"
 image kaz surprised = "kaz_surprised"
 image kaz upset = "kaz_upset"
 image kaz smug = "kaz_smug"
+image kasumi happy = "kasumi_happy"
+image kasumi blushing = "kasumi_blushing"
+image kasumi disappointed = "kasumi_disappointed"
+image kasumi passive = "kasumi_passive"
+image kasumi upset = "kasumi_upset"
+
 
 
 
 
 
 label start:
-    
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
+
     scene black_screen
     
     mysterious "..."
-    mysterious "...get up..."
-    MC "huh...?"
-    mysterious "School starts in forty-five minutes."
-    MC "I can make it in thirty."
-    mysterious "This again? You’ve left me no choice."
-    MC "{i}I feel someone climbing on top of my bed. What a strange dream I’m currently experiencing…{i}"
-    "*WHAMMMMM!*"
+    mysterious "Hey..."
+    MC "Huh...?"
+    mysterious "Hey, wake up! You’ll be late for school."
+    MC "..."
+    mysterious "Fine, you leave me no choice."
+    MC "{i}I feel someone climbing on top of my bed...{i}"
+    mysterious "Hyaaaaaaaaaah!!!"
     
     
     scene bedroom_day with fade
     
+    "{i}The wind and sleepiness is knocked out of me from my little sister’s cheap coercion tactics.{i}"
     MC "Oww-! Okay, I'm up! I'm up!"
-    "{i}I fumble and squirm to get my sister off of me - it’s no use. I turn my head, looking up at my sister as she towers over me.{i}"
+    MC "Geez... I do have a spine you know."
+    show hana staring at right:
+        xalign 0.75
+        yalign 1.0
+    Hana "Don’t worry, I wouldn’t use a move on you if I didn’t know how to do it safely."
+    "{i}Lately she’s been privy to the fact that now that we’re teenagers, her strength is starting to catch up to mine. Her long-time passive interest in wrestling is being put to use and frankly, I don’t appreciate it.{i}"
     show hana mad at right:
         xalign 0.75
         yalign 1.0
-    Hana "Get your life together."
-    MC "Get off me! It’s my life, I’ll wake up when I want."
-    "{i}Hana steps on my leg, bringing me great pain and sorrow{i}"
-    Hana "Are you going to get up now??"
-    MC "Ack-! FINE! Get off, I’ll get out of bed."
-    "{i}Hana releases her foot from my body and leaves the room whistling an annoying tune, allowing me to get a hold of my surroundings. I stretch my arms out and head downstairs.{i}"
+    Hana "School starts in forty-five minutes!"
+    MC "Which means I have another fifteen until I’ll be late for sure."
+    "{i}Wrapping myself in my blanket again I have a couple seconds more rest until I sense Hana readying another move. I throw off my blanket to signal my cooperation and head over to the kitchen.{i}"
     
     
     scene livingroom_day with fade
-    "{i}I go into the kitchen and see that Hana has made some eggs, bacon, and rice for breakfast. Guess she wanted to eat with me, she should have just said so.{i}"
-    "{i}We start eating our cold breakfast with nothing to say in particular to each other. Any reason for resentment has long since dissipated, as it always goes.{i}"
+    "{i}Two cold plates of eggs, bacon and rice are on the dining table. Hana takes a seat and starts eating . If she wanted to eat with me she could have just said so. I guess she told me she’d be making breakfast last night though...{i}"
     "*Cellphone ringing*"
     "{i}Hm? Why am I getting a call this early in the morning?{i}"
-    "{i}Ah.. an unknown number. No thanks.{i}"
+    "{i}Our parents would always use the landline. Anyone at school would just text me if they needed to talk to me, not that I knew many people anyways.{i}"
+    MC "Ah.. an unknown number. No thanks."
     "*Click*"
+    "{i}I don't care. If it was something important they'll leave a message.{i}"
     show hana cute at right:
         xalign 0.5
         yalign 1.0
@@ -207,6 +214,12 @@ label start:
         yalign 1.0
     Kaz "Hey look! It's Kasumi!"
     "{i}I look over by the benches and see my childhood friend, Kasumi, sitting and waiting with her lunch. She notices us and comes over.{i}"
+    show kaz happy:
+        xalign 0.5
+        yalign 1.0
+    show kasumi happy:
+        xalign 0.5
+        yalign 1.0
     
     # This ends the game.
     return
