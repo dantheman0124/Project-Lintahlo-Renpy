@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 64: expected menuitem
-    if goBack:
-    ^
+File "game/screens.rpy", line 286: u'foreground' is not a keyword argument or valid child for the screen statement.
+    foreground "main_menu"
+              ^
 
-Ren'Py Version: Ren'Py 7.1.3.1092
-Sun Mar 10 20:45:20 2019
+Ren'Py Version: Ren'Py 7.2.0.424
+Tue Apr 02 16:25:29 2019

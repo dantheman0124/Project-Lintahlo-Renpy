@@ -279,6 +279,32 @@ style quick_button:
 style quick_button_text:
     properties gui.button_text_properties("quick_button")
 
+#Custom screen
+screen Characters:
+    tag menu
+    add gui.character_menu_background
+    add "gui/overlay/main_menu.png"
+    use CharacterNavigation
+    vbox:
+        #button to go back to main menu
+        textbutton _("Return") action ShowMenu("main_menu"):
+            xpos 0.5
+            ypos 20.0
+
+screen CharacterNavigation:
+
+    vbox:
+        style_prefix "navigation"
+
+        xpos gui.navigation_xpos
+        yalign 0.5
+
+        spacing gui.navigation_spacing
+
+        textbutton _("Start") action Start()
+        textbutton _("Characters") action ShowMenu("Characters")
+
+
 
 ################################################################################
 ## Main and Game Menu Screens
@@ -288,7 +314,6 @@ style quick_button_text:
 ##
 ## This screen is included in the main and game menus, and provides navigation
 ## to other menus, and to start the game.
-
 screen navigation():
 
     vbox:
@@ -302,6 +327,7 @@ screen navigation():
         if main_menu:
 
             textbutton _("Start") action Start()
+            textbutton _("Characters") action ShowMenu("Characters")
 
         else:
 

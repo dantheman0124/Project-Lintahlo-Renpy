@@ -1,32 +1,54 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 208, in script
-    Kaz "Hey [playerName] look! It's Kasumi!"
-KeyError: u'playerName'
+  File "renpy/common/00action_menu.rpy", line 100, in __call__
+    raise Exception("%r is not a screen or a label." % orig_screen)
+Exception: u'MainMenu' is not a screen or a label.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 208, in script
-    Kaz "Hey [playerName] look! It's Kasumi!"
-  File "C:\Users\Daniel Bassani\Downloads\renpy-7.1.3-sdk\renpy\ast.py", line 690, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\Daniel Bassani\Downloads\renpy-7.1.3-sdk\renpy\exports.py", line 1316, in say
-    who(what, *args, **kwargs)
-  File "C:\Users\Daniel Bassani\Downloads\renpy-7.1.3-sdk\renpy\character.py", line 1118, in __call__
-    what = what_pattern.replace("[what]", sub(what, translate=True))
-  File "C:\Users\Daniel Bassani\Downloads\renpy-7.1.3-sdk\renpy\character.py", line 1107, in sub
-    return renpy.substitutions.substitute(s, scope=scope, force=force, translate=translate)[0]
-  File "C:\Users\Daniel Bassani\Downloads\renpy-7.1.3-sdk\renpy\substitutions.py", line 244, in substitute
-    s = formatter.vformat(s, (), kwargs)
-  File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/string.py", line 563, in vformat
-  File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/string.py", line 585, in _vformat
-  File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/string.py", line 646, in get_field
-  File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/string.py", line 605, in get_value
-KeyError: u'playerName'
+  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in script
+    python hide:
+  File "C:\Users\Daniel Bassani\Downloads\renpy-7.1.3-sdk\renpy\ast.py", line 896, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\Daniel Bassani\Downloads\renpy-7.1.3-sdk\renpy\python.py", line 1929, in py_exec_bytecode
+    exec bytecode in globals, locals
+  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in <module>
+    python hide:
+  File "renpy/common/_layout/screen_main_menu.rpym", line 35, in _execute_python_hide
+    ui.interact()
+  File "C:\Users\Daniel Bassani\Downloads\renpy-7.1.3-sdk\renpy\ui.py", line 289, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\Daniel Bassani\Downloads\renpy-7.1.3-sdk\renpy\display\core.py", line 2687, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
+  File "C:\Users\Daniel Bassani\Downloads\renpy-7.1.3-sdk\renpy\display\core.py", line 3490, in interact_core
+    rv = root_widget.event(ev, x, y, 0)
+  File "C:\Users\Daniel Bassani\Downloads\renpy-7.1.3-sdk\renpy\display\layout.py", line 998, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\Daniel Bassani\Downloads\renpy-7.1.3-sdk\renpy\display\transition.py", line 47, in event
+    return self.new_widget.event(ev, x, y, st)  # E1101
+  File "C:\Users\Daniel Bassani\Downloads\renpy-7.1.3-sdk\renpy\display\layout.py", line 998, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\Daniel Bassani\Downloads\renpy-7.1.3-sdk\renpy\display\layout.py", line 998, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\Daniel Bassani\Downloads\renpy-7.1.3-sdk\renpy\display\screen.py", line 697, in event
+    rv = self.child.event(ev, x, y, st)
+  File "C:\Users\Daniel Bassani\Downloads\renpy-7.1.3-sdk\renpy\display\layout.py", line 998, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\Daniel Bassani\Downloads\renpy-7.1.3-sdk\renpy\display\layout.py", line 998, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\Daniel Bassani\Downloads\renpy-7.1.3-sdk\renpy\display\behavior.py", line 923, in event
+    return handle_click(self.clicked)
+  File "C:\Users\Daniel Bassani\Downloads\renpy-7.1.3-sdk\renpy\display\behavior.py", line 858, in handle_click
+    rv = run(action)
+  File "C:\Users\Daniel Bassani\Downloads\renpy-7.1.3-sdk\renpy\display\behavior.py", line 320, in run
+    return action(*args, **kwargs)
+  File "renpy/common/00action_menu.rpy", line 100, in __call__
+    raise Exception("%r is not a screen or a label." % orig_screen)
+Exception: u'MainMenu' is not a screen or a label.
 
 Windows-8-6.2.9200
 Ren'Py 7.2.0.424
 Project Lintahlo 1.0
-Fri Mar 15 19:39:39 2019
+Tue Apr 02 14:05:47 2019
