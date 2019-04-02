@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 286: u'foreground' is not a keyword argument or valid child for the screen statement.
-    foreground "main_menu"
-              ^
+File "game/screens.rpy", line 329: expected a keyword argument, colon, or end of line.
+    imagebutton "start.png" action Start()
+                ^
 
 Ren'Py Version: Ren'Py 7.2.0.424
-Tue Apr 02 16:25:29 2019
+Tue Apr 02 18:00:30 2019

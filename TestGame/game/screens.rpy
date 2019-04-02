@@ -320,14 +320,16 @@ screen navigation():
         style_prefix "navigation"
 
         xpos gui.navigation_xpos
-        yalign 0.5
+        yalign 0.75
 
         spacing gui.navigation_spacing
 
         if main_menu:
-
-            textbutton _("Start") action Start()
-            textbutton _("Characters") action ShowMenu("Characters")
+            
+            imagebutton idle "start_button3.png" hover "start_button_hover3.png" action Start()
+            #textbutton _("Start") action Start()
+            imagebutton idle "character_button.png" hover "character_button_hover.png" action ShowMenu("Characters")
+            #textbutton _("Characters") action ShowMenu("Characters")
 
         else:
 
@@ -368,6 +370,12 @@ style navigation_button:
 style navigation_button_text:
     properties gui.button_text_properties("navigation_button")
 
+#Custom main menu screen
+screen custom_main_menu():
+    tag menu
+    style_prefix "main_menu"
+    add gui.main_menu_background
+    use navigation
 
 ## Main Menu screen ############################################################
 ##
@@ -376,17 +384,19 @@ style navigation_button_text:
 ## https://www.renpy.org/doc/html/screen_special.html#main-menu
 
 screen main_menu():
-
+    
     ## This ensures that any other menu screen is replaced.
     tag menu
 
     style_prefix "main_menu"
 
     add gui.main_menu_background
-
-    ## This empty frame darkens the main menu.
-    frame:
-        pass
+    
+#--------------------------------------------------
+#    ## This empty frame darkens the main menu.
+#    frame:
+#        pass
+#--------------------------------------------------
 
     ## The use statement includes another screen inside this one. The actual
     ## contents of the main menu are in the navigation screen.
