@@ -283,26 +283,16 @@ style quick_button_text:
 screen Characters:
     tag menu
     add gui.character_menu_background
-    add "gui/overlay/main_menu.png"
     use CharacterNavigation
-    vbox:
-        #button to go back to main menu
-        textbutton _("Return") action ShowMenu("main_menu"):
-            xpos 0.5
-            ypos 20.0
 
 screen CharacterNavigation:
 
     vbox:
-        style_prefix "navigation"
-
-        xpos gui.navigation_xpos
-        yalign 0.5
-
-        spacing gui.navigation_spacing
-
-        textbutton _("Start") action Start()
-        textbutton _("Characters") action ShowMenu("Characters")
+        #button to go back to main menu
+        imagebutton idle "return_button.png" hover "return_button_hover.png":
+            xpos 0.5
+            ypos 16.0
+            action Return()
 
 
 ################################################################################

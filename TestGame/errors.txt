@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 328: u'show' is not a keyword argument or valid child for the vbox statement.
-    show title:
-        ^
+File "game/screens.rpy", line 290: imagebutton expects a non-empty block.
+    imagebutton idle "return_button.png" hover "return_button_hover.png":
+                                                                         ^
 
 Ren'Py Version: Ren'Py 7.2.0.424
-Tue Apr 02 20:15:36 2019
+Tue Apr 02 20:51:18 2019
