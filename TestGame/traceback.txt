@@ -1,23 +1,7 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/screens.rpy", line 392, in execute
-    screen main_menu():
-  File "game/screens.rpy", line 392, in execute
-    screen main_menu():
-  File "game/screens.rpy", line 409, in execute
-    use navigation
-  File "game/screens.rpy", line 317, in execute
-    screen navigation():
-  File "game/screens.rpy", line 317, in execute
-    screen navigation():
-  File "game/screens.rpy", line 319, in execute
-    vbox:
-  File "game/screens.rpy", line 327, in execute
-    if main_menu:
-  File "game/screens.rpy", line 328, in execute
-    add title:
-NameError: name 'title' is not defined
+While loading <'Image' u'kasumi_happy.png'>:
+IOError: Couldn't find file 'kasumi_happy.png'.
 
 -- Full Traceback ------------------------------------------------------------
 
@@ -36,42 +20,81 @@ Full traceback:
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "C:\Users\Daniel Bassani\Downloads\renpy-7.1.3-sdk\renpy\display\core.py", line 2687, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
-  File "C:\Users\Daniel Bassani\Downloads\renpy-7.1.3-sdk\renpy\display\core.py", line 3071, in interact_core
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "C:\Users\Daniel Bassani\Downloads\renpy-7.1.3-sdk\renpy\display\core.py", line 531, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Daniel Bassani\Downloads\renpy-7.1.3-sdk\renpy\display\core.py", line 531, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Daniel Bassani\Downloads\renpy-7.1.3-sdk\renpy\display\core.py", line 531, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Daniel Bassani\Downloads\renpy-7.1.3-sdk\renpy\display\screen.py", line 424, in visit_all
-    callback(self)
-  File "C:\Users\Daniel Bassani\Downloads\renpy-7.1.3-sdk\renpy\display\core.py", line 3071, in <lambda>
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "C:\Users\Daniel Bassani\Downloads\renpy-7.1.3-sdk\renpy\display\screen.py", line 434, in per_interact
-    self.update()
-  File "C:\Users\Daniel Bassani\Downloads\renpy-7.1.3-sdk\renpy\display\screen.py", line 619, in update
-    self.screen.function(**self.scope)
-  File "game/screens.rpy", line 392, in execute
-    screen main_menu():
-  File "game/screens.rpy", line 392, in execute
-    screen main_menu():
-  File "game/screens.rpy", line 409, in execute
-    use navigation
-  File "game/screens.rpy", line 317, in execute
-    screen navigation():
-  File "game/screens.rpy", line 317, in execute
-    screen navigation():
-  File "game/screens.rpy", line 319, in execute
-    vbox:
-  File "game/screens.rpy", line 327, in execute
-    if main_menu:
-  File "game/screens.rpy", line 328, in execute
-    add title:
-  File "<screen language>", line 328, in <module>
-NameError: name 'title' is not defined
+  File "C:\Users\Daniel Bassani\Downloads\renpy-7.1.3-sdk\renpy\display\core.py", line 3171, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "C:\Users\Daniel Bassani\Downloads\renpy-7.1.3-sdk\renpy\display\core.py", line 2083, in draw_screen
+    renpy.config.screen_height,
+  File "render.pyx", line 516, in renpy.display.render.render_screen
+  File "render.pyx", line 244, in renpy.display.render.render
+  File "C:\Users\Daniel Bassani\Downloads\renpy-7.1.3-sdk\renpy\display\layout.py", line 722, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 151, in renpy.display.render.render
+  File "render.pyx", line 244, in renpy.display.render.render
+  File "C:\Users\Daniel Bassani\Downloads\renpy-7.1.3-sdk\renpy\display\transition.py", line 361, in render
+    top = render(self.new_widget, width, height, st, at)
+  File "render.pyx", line 151, in renpy.display.render.render
+  File "render.pyx", line 244, in renpy.display.render.render
+  File "C:\Users\Daniel Bassani\Downloads\renpy-7.1.3-sdk\renpy\display\layout.py", line 722, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 151, in renpy.display.render.render
+  File "render.pyx", line 244, in renpy.display.render.render
+  File "C:\Users\Daniel Bassani\Downloads\renpy-7.1.3-sdk\renpy\display\layout.py", line 722, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 151, in renpy.display.render.render
+  File "render.pyx", line 244, in renpy.display.render.render
+  File "C:\Users\Daniel Bassani\Downloads\renpy-7.1.3-sdk\renpy\display\screen.py", line 669, in render
+    child = renpy.display.render.render(self.child, w, h, st, at)
+  File "render.pyx", line 151, in renpy.display.render.render
+  File "render.pyx", line 244, in renpy.display.render.render
+  File "C:\Users\Daniel Bassani\Downloads\renpy-7.1.3-sdk\renpy\display\layout.py", line 722, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 151, in renpy.display.render.render
+  File "render.pyx", line 244, in renpy.display.render.render
+  File "C:\Users\Daniel Bassani\Downloads\renpy-7.1.3-sdk\renpy\display\layout.py", line 1124, in render
+    st, at)
+  File "render.pyx", line 151, in renpy.display.render.render
+  File "render.pyx", line 244, in renpy.display.render.render
+  File "C:\Users\Daniel Bassani\Downloads\renpy-7.1.3-sdk\renpy\display\layout.py", line 883, in render
+    surf = render(d, rw, height - y, cst, cat)
+  File "render.pyx", line 151, in renpy.display.render.render
+  File "render.pyx", line 244, in renpy.display.render.render
+  File "C:\Users\Daniel Bassani\Downloads\renpy-7.1.3-sdk\renpy\display\layout.py", line 1124, in render
+    st, at)
+  File "render.pyx", line 151, in renpy.display.render.render
+  File "render.pyx", line 244, in renpy.display.render.render
+  File "C:\Users\Daniel Bassani\Downloads\renpy-7.1.3-sdk\renpy\display\layout.py", line 1572, in render
+    cwidth, cheight = sizeit('c', width, height, 0, 0)
+  File "C:\Users\Daniel Bassani\Downloads\renpy-7.1.3-sdk\renpy\display\layout.py", line 1567, in sizeit
+    rend = render(pos_d[pos], width, height, st, at)
+  File "render.pyx", line 151, in renpy.display.render.render
+  File "render.pyx", line 244, in renpy.display.render.render
+  File "C:\Users\Daniel Bassani\Downloads\renpy-7.1.3-sdk\renpy\display\viewport.py", line 264, in render
+    surf = renpy.display.render.render(self.child, child_width, child_height, st, at)
+  File "render.pyx", line 151, in renpy.display.render.render
+  File "render.pyx", line 244, in renpy.display.render.render
+  File "C:\Users\Daniel Bassani\Downloads\renpy-7.1.3-sdk\renpy\display\layout.py", line 925, in render
+    surf = render(d, width - x, rh, cst, cat)
+  File "render.pyx", line 151, in renpy.display.render.render
+  File "render.pyx", line 244, in renpy.display.render.render
+  File "C:\Users\Daniel Bassani\Downloads\renpy-7.1.3-sdk\renpy\display\viewport.py", line 264, in render
+    surf = renpy.display.render.render(self.child, child_width, child_height, st, at)
+  File "render.pyx", line 151, in renpy.display.render.render
+  File "render.pyx", line 244, in renpy.display.render.render
+  File "C:\Users\Daniel Bassani\Downloads\renpy-7.1.3-sdk\renpy\display\layout.py", line 925, in render
+    surf = render(d, width - x, rh, cst, cat)
+  File "render.pyx", line 151, in renpy.display.render.render
+  File "render.pyx", line 244, in renpy.display.render.render
+  File "C:\Users\Daniel Bassani\Downloads\renpy-7.1.3-sdk\renpy\display\im.py", line 580, in render
+    return cache.get(self, render=True)
+  File "C:\Users\Daniel Bassani\Downloads\renpy-7.1.3-sdk\renpy\display\im.py", line 266, in get
+    surf = image.load()
+  File "C:\Users\Daniel Bassani\Downloads\renpy-7.1.3-sdk\renpy\display\im.py", line 625, in load
+    surf = renpy.display.pgrender.load_image(renpy.loader.load(self.filename), self.filename)
+  File "C:\Users\Daniel Bassani\Downloads\renpy-7.1.3-sdk\renpy\loader.py", line 576, in load
+    raise IOError("Couldn't find file '%s'." % name)
+IOError: Couldn't find file 'kasumi_happy.png'.
 
 Windows-8-6.2.9200
 Ren'Py 7.2.0.424
 Project Lintahlo 1.0
-Tue Apr 02 20:16:11 2019
+Tue Apr 02 22:19:24 2019

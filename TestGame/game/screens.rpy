@@ -282,17 +282,33 @@ style quick_button_text:
 #Custom screen
 screen Characters:
     tag menu
+    style_prefix "main_menu"
     add gui.character_menu_background
-    use CharacterNavigation
+    use custom_game_menu(_("Characters"), scroll="viewport"):
+        viewport id "vp":
+            ymaximum 1000
+            has vbox:
+                box_wrap True
+                text "Kasumi Takamura"
+                add "kasumi_happy.png"
+                text "This is where Kasumi's character description is going to be. Hopefully this formats when there is a long sentence. This is not a new line. I have no idea where this goes."
+                text "This is a new line. I have no idea where this goes."
+
+              
+        
+            
 
 screen CharacterNavigation:
-
     vbox:
+        use custom_game_menu(_("Characters"), scroll="viewport")
+        add "title_characters.png":
+            ypos -4.08
         #button to go back to main menu
         imagebutton idle "return_button.png" hover "return_button_hover.png":
-            xpos 0.5
-            ypos 16.0
+            style "return_button"
             action Return()
+        
+        
 
 
 ################################################################################
@@ -815,7 +831,7 @@ screen preferences():
 
     tag menu
 
-    use game_menu(_("Preferences"), scroll="viewport"):
+    use custom_game_menu(_("Preferences"), scroll="viewport"):
 
         vbox:
 
