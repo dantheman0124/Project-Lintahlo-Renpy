@@ -638,12 +638,79 @@ screen load():
 
     use file_slots(_("Load"))
 
+#custom game menu
+screen custom_game_menu(title, scroll=None, yinitial=0.0):
+    style_prefix "game_menu"
 
+    if main_menu:
+        add gui.main_menu_background
+    else:
+        add gui.game_menu_background
+
+    frame:
+        style "game_menu_outer_frame"
+
+        hbox:
+
+            ## Reserve space for the navigation section.
+            frame:
+                style "game_menu_navigation_frame"
+
+            frame:
+                style "game_menu_content_frame"
+
+                if scroll == "viewport":
+
+                    viewport:
+                        yinitial yinitial
+                        scrollbars "vertical"
+                        mousewheel True
+                        draggable True
+                        pagekeys True
+
+                        side_yfill True
+
+                        vbox:
+                            transclude
+
+                elif scroll == "vpgrid":
+
+                    vpgrid:
+                        cols 1
+                        yinitial yinitial
+
+                        scrollbars "vertical"
+                        mousewheel True
+                        draggable True
+                        pagekeys True
+
+                        side_yfill True
+
+                        transclude
+
+                else:
+                    transclude
+
+    #use navigation
+
+    imagebutton idle "return_button.png" hover "return_button_hover.png":
+        style "return_button"
+        action Return()
+#    textbutton _("Return"):
+#        style "return_button"
+
+#        action Return()
+
+    label title
+
+    if main_menu:
+        key "game_menu" action ShowMenu("main_menu")
+        
 screen file_slots(title):
 
     default page_name_value = FilePageNameInputValue(pattern=_("Page {}"), auto=_("Automatic saves"), quick=_("Quick saves"))
 
-    use game_menu(title):
+    use custom_game_menu(title):
 
         fixed:
 
