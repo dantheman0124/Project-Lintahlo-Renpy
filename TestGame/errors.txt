@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 329: expected a keyword argument, colon, or end of line.
-    imagebutton "start.png" action Start()
-                ^
+File "game/screens.rpy", line 328: u'show' is not a keyword argument or valid child for the vbox statement.
+    show title:
+        ^
 
 Ren'Py Version: Ren'Py 7.2.0.424
-Tue Apr 02 18:00:30 2019
+Tue Apr 02 20:15:36 2019

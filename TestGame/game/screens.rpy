@@ -305,7 +305,6 @@ screen CharacterNavigation:
         textbutton _("Characters") action ShowMenu("Characters")
 
 
-
 ################################################################################
 ## Main and Game Menu Screens
 ################################################################################
@@ -325,11 +324,12 @@ screen navigation():
         spacing gui.navigation_spacing
 
         if main_menu:
-            
-            imagebutton idle "start_button3.png" hover "start_button_hover3.png" action Start()
+            add "title.png":
+                xpos 0.0
+                ypos -0.5
+            imagebutton idle "new_game_button.png" hover "new_game_button_hover.png" action Start()
             #textbutton _("Start") action Start()
-            imagebutton idle "character_button.png" hover "character_button_hover.png" action ShowMenu("Characters")
-            #textbutton _("Characters") action ShowMenu("Characters")
+            
 
         else:
 
@@ -337,9 +337,13 @@ screen navigation():
 
             textbutton _("Save") action ShowMenu("save")
 
-        textbutton _("Load") action ShowMenu("load")
+        imagebutton idle "load_game_button.png" hover "load_game_button_hover.png" action ShowMenu("load")
+        imagebutton idle "character_button.png" hover "character_button_hover.png" action ShowMenu("Characters")
+        #textbutton _("Characters") action ShowMenu("Characters")
+        #textbutton _("Load") action ShowMenu("load")
 
-        textbutton _("Preferences") action ShowMenu("preferences")
+        imagebutton idle "settings_button.png" hover "settings_button_hover.png" action ShowMenu("preferences")
+        #textbutton _("Preferences") action ShowMenu("preferences")
 
         if _in_replay:
 
@@ -349,15 +353,16 @@ screen navigation():
 
             textbutton _("Main Menu") action MainMenu()
 
-        textbutton _("About") action ShowMenu("about")
+        #textbutton _("About") action ShowMenu("about")
 
         if renpy.variant("pc"):
 
             ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("Help") action ShowMenu("help")
+            #textbutton _("Help") action ShowMenu("help")
 
             ## The quit button is banned on iOS and unnecessary on Android.
-            textbutton _("Quit") action Quit(confirm=not main_menu)
+            imagebutton idle "quit_button.png" hover "quit_button_hover.png" action Quit(confirm=not main_menu)
+            #textbutton _("Quit") action Quit(confirm=not main_menu)
 
 
 style navigation_button is gui_button
