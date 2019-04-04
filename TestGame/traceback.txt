@@ -1,7 +1,7 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While loading <'Image' u'kasumi_happy.png'>:
-IOError: Couldn't find file 'kasumi_happy.png'.
+While loading <'Image' u'miyo_descpription.png'>:
+IOError: Couldn't find file 'miyo_descpription.png'.
 
 -- Full Traceback ------------------------------------------------------------
 
@@ -92,9 +92,9 @@ Full traceback:
     surf = renpy.display.pgrender.load_image(renpy.loader.load(self.filename), self.filename)
   File "C:\Users\Daniel Bassani\Downloads\renpy-7.1.3-sdk\renpy\loader.py", line 576, in load
     raise IOError("Couldn't find file '%s'." % name)
-IOError: Couldn't find file 'kasumi_happy.png'.
+IOError: Couldn't find file 'miyo_descpription.png'.
 
 Windows-8-6.2.9200
 Ren'Py 7.2.0.424
 Project Lintahlo 1.0
-Tue Apr 02 22:19:24 2019
+Wed Apr 03 19:56:34 2019

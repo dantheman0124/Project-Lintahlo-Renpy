@@ -286,14 +286,18 @@ screen Characters:
     add gui.character_menu_background
     use custom_game_menu(_("Characters"), scroll="viewport"):
         viewport id "vp":
-            ymaximum 1000
+            ymaximum 2100
             has vbox:
-                box_wrap True
-                text "Kasumi Takamura"
-                add "kasumi_happy.png"
-                text "This is where Kasumi's character description is going to be. Hopefully this formats when there is a long sentence. This is not a new line. I have no idea where this goes."
-                text "This is a new line. I have no idea where this goes."
-
+                add "kasumi_description.png"
+                text ""
+                add "kaz_description.png"
+                text ""
+                add "hana_description.png"
+                text ""
+                add "akina_description.png"
+                text ""
+                add "miyo_description.png"
+                
               
         
             
